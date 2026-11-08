@@ -1,0 +1,966 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #081421;
+  --surface: #14273d;
+  --surface2: #203d58;
+  --border: #3e5c78;
+  --white: #f5faff;
+  --muted: #bad0e4;
+  --gold: #f3c67a;
+  --blue: #7aaffd;
+  --green: #50ddb0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 0 0,
+      #244968,
+      transparent 38%
+    ),
+    var(--bg);
+
+  font-family: "Manrope", Arial, sans-serif;
+  color: var(--white);
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+button,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition:
+    filter .2s,
+    transform .2s;
+  touch-action: manipulation;
+}
+
+button:hover {
+  filter: brightness(1.12);
+}
+
+button:active {
+  transform: scale(.985);
+}
+
+button:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+a {
+  color: #b6d7ff;
+}
+
+/* ЖОҒАРҒЫ ПАНЕЛЬ */
+
+.topbar {
+  padding: 18px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  background: #0c2035;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand-logo {
+  width: 60px;
+  height: 60px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    135deg,
+    #ffe9b0,
+    #cc9a52
+  );
+
+  color: #192c41;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.brand h1 {
+  font-size: 21px;
+}
+
+.brand p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.topic-label {
+  padding: 9px 15px;
+  border-radius: 30px;
+  background: #294969;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* ОРНАЛАСУ */
+
+.layout {
+  max-width: 1750px;
+  margin: auto;
+  padding: 25px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 325px;
+  align-items: start;
+  gap: 24px;
+}
+
+.main {
+  min-width: 0;
+}
+
+.hero {
+  background: linear-gradient(
+    130deg,
+    #285371,
+    #102139
+  );
+
+  border: 1px solid var(--border);
+  border-radius: 22px;
+
+  padding: 34px;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hero h2 {
+  font-size: clamp(27px, 3.2vw, 44px);
+  line-height: 1.35;
+  margin: 17px 0;
+}
+
+.hero p {
+  color: #d6e4f6;
+  font-size: 16px;
+}
+
+.progress-track {
+  background: #0a1b2c;
+  height: 9px;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+#progressBar {
+  width: 12.5%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #5d9cff,
+    #55ddb0
+  );
+  transition: width .3s;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+
+  color: #d2e2f6;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* НЕГІЗГІ МАЗМҰН */
+
+.card {
+  padding: 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 19px;
+  margin-bottom: 21px;
+}
+
+.card h2 {
+  color: var(--gold);
+  font-size: clamp(23px, 2.5vw, 32px);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.card h3 {
+  color: #acd0ff;
+  font-size: 20px;
+  margin: 25px 0 12px;
+}
+
+.card p {
+  color: #e6eefb;
+  font-size: 17px;
+  line-height: 2;
+  margin-bottom: 17px;
+}
+
+.card ul,
+.card ol {
+  padding-left: 27px;
+  font-size: 16px;
+}
+
+.card li {
+  margin-bottom: 12px;
+}
+
+.stage-time {
+  display: inline-block;
+  background: #2c4a67;
+  border-radius: 30px;
+  padding: 7px 15px;
+  margin-bottom: 18px;
+
+  font-size: 13px;
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.highlight {
+  padding: 20px;
+  margin: 20px 0;
+  background: #24435c;
+  border-left: 5px solid var(--gold);
+  border-radius: 12px;
+}
+
+.notice {
+  padding: 19px;
+  margin: 20px 0;
+  background: #194438;
+  border-left: 4px solid var(--green);
+  border-radius: 12px;
+}
+
+.notice p {
+  color: #e3fff3;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* ТАРИХИ СУРЕТТЕР */
+
+.figure {
+  background: #0a1d2e;
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 15px;
+  margin: 22px 0;
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  max-height: 440px;
+  object-fit: contain;
+  border-radius: 11px;
+}
+
+.figure figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.image-fallback {
+  display: none;
+  padding: 27px;
+  background: #24425e;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* УАҚЫТ СЫЗЫҒЫ */
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 23px 0;
+}
+
+.timeline-item {
+  background: #213d59;
+  border: 1px solid #547696;
+  border-radius: 12px;
+  padding: 17px 11px;
+  text-align: center;
+}
+
+.timeline-item strong {
+  display: block;
+  color: var(--gold);
+  font-size: 21px;
+}
+
+.timeline-item small {
+  display: block;
+  color: #d8e6f7;
+  font-size: 12px;
+}
+
+/* ДЕРЕКТЕР КЕСТЕСІ */
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 22px 0;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th,
+.history-table td {
+  padding: 13px;
+  border: 1px solid #54718e;
+  text-align: left;
+  vertical-align: top;
+  font-size: 15px;
+}
+
+.history-table th {
+  background: #315978;
+}
+
+.history-table td {
+  background: #1c3753;
+}
+
+/* САНАҚ ДИАГРАММАСЫ */
+
+.chart {
+  background: #0b1c2f;
+  border: 1px solid #486780;
+  border-radius: 15px;
+  padding: 21px;
+  margin: 22px 0;
+}
+
+.chart-row {
+  margin: 18px 0;
+}
+
+.chart-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.chart-label strong {
+  color: var(--gold);
+}
+
+.chart-track {
+  height: 21px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #25415b;
+}
+
+.chart-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #589cf5,
+    #53dbad
+  );
+  border-radius: 30px;
+}
+
+.chart-note {
+  color: #c0d3e8 !important;
+  font-size: 13px !important;
+}
+
+/* ДӘПТЕРГЕ КОНСПЕКТ */
+
+.notebook {
+  padding: 32px;
+  background: #fff9ed;
+  color: #28374a;
+  border-left: 7px solid #d2a151;
+  border-radius: 15px;
+}
+
+.notebook-heading {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  color: #704d20;
+  margin-bottom: 26px;
+  line-height: 1.6;
+}
+
+.notebook h3 {
+  color: #855d26;
+}
+
+.notebook p {
+  color: #26384a;
+  font-size: 18px;
+  line-height: 2.1;
+}
+
+/* ВИДЕО */
+
+.video-panel {
+  padding: 15px;
+  background: #0a1c30;
+  border: 1px solid #466783;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+.video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: black;
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.video-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 14px 0;
+}
+
+.video-buttons button,
+.video-buttons a {
+  display: inline-block;
+  background: #356cac;
+  border: 0;
+  border-radius: 9px;
+  color: white;
+  text-decoration: none;
+  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.video-buttons button.active {
+  background: #b48545;
+}
+
+.video-buttons a {
+  background: #9b5062;
+}
+
+.video-note {
+  color: #cadbf0 !important;
+  font-size: 13px !important;
+}
+
+.slide {
+  min-height: 295px;
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(
+    130deg,
+    #285375,
+    #0d223a
+  );
+  border: 1px solid #5a83a7;
+  border-radius: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn .35s ease;
+}
+
+.slide-icon {
+  font-size: 54px;
+}
+
+.slide h3 {
+  color: var(--gold);
+  font-size: 25px;
+}
+
+.slide p {
+  max-width: 770px;
+}
+
+.slide-count {
+  color: #c7daf2;
+  font-size: 13px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: .3;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* СҰРАҚТАР */
+
+.question {
+  padding: 20px;
+  margin: 14px 0;
+  border-radius: 13px;
+  background: #1f3a55;
+  border: 1px solid #496981;
+}
+
+.question-label {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.question strong {
+  display: block;
+  font-size: 17px;
+}
+
+.reveal {
+  padding: 11px 15px;
+  border-radius: 8px;
+  background: #356dad;
+  border: 0;
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+.answer {
+  display: none;
+  background: #1c493d;
+  border-left: 4px solid var(--green);
+  border-radius: 9px;
+  padding: 15px;
+  margin-top: 12px;
+  color: #e4fff5;
+  font-size: 15px;
+}
+
+.answer.open {
+  display: block;
+}
+
+.writing-task {
+  background: #224059;
+  border-left: 4px solid var(--blue);
+  border-radius: 11px;
+  padding: 19px;
+  margin: 17px 0;
+}
+
+.writing-task p {
+  font-size: 15px;
+}
+
+.student-picker {
+  padding: 20px;
+  background: #22415b;
+  border-radius: 12px;
+  margin-top: 22px;
+}
+
+.student-picker textarea {
+  width: 100%;
+  min-height: 95px;
+  resize: vertical;
+  padding: 12px;
+  margin-top: 12px;
+  background: #0b1f31;
+  color: white;
+  border: 1px solid #6587a6;
+  border-radius: 8px;
+}
+
+.student-picker button {
+  background: var(--gold);
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 16px;
+  font-weight: 800;
+  color: #1b2b3e;
+  margin-top: 12px;
+}
+
+#studentResult {
+  color: var(--gold);
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 14px;
+}
+
+/* 3 КОМАНДА */
+
+.teams {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.team {
+  min-width: 0;
+  padding: 17px;
+  background: #1b3651;
+  border: 1px solid #4b6987;
+  border-radius: 14px;
+}
+
+.team:nth-child(1) {
+  border-top: 5px solid #74aaff;
+}
+
+.team:nth-child(2) {
+  border-top: 5px solid #f2c778;
+}
+
+.team:nth-child(3) {
+  border-top: 5px solid #54ddb0;
+}
+
+.team h3 {
+  color: var(--gold);
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.team p {
+  font-size: 14px;
+}
+
+.statement {
+  background: #10273c;
+  border-radius: 9px;
+  padding: 12px;
+  margin: 12px 0;
+}
+
+.statement strong {
+  font-size: 14px;
+}
+
+.award {
+  background: #267f60;
+  color: white;
+  border: 0;
+  border-radius: 9px;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-top: 11px;
+}
+
+.award.active {
+  background: #aa8043;
+}
+
+.winner-box {
+  padding: 24px;
+  background: #1b423d;
+  border: 1px solid #4f9c83;
+  border-radius: 14px;
+  margin: 22px 0;
+}
+
+.final-score {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  background: #24475a;
+  border-radius: 9px;
+  padding: 12px;
+  margin: 9px 0;
+}
+
+.final-score strong {
+  color: var(--gold);
+}
+
+.winner-name {
+  text-align: center;
+  color: var(--green);
+  font-weight: 800;
+  font-size: 25px;
+  margin-top: 16px;
+}
+
+/* ОҢ ЖАҚ БАСҚАРУ ПАНЕЛІ */
+
+.sidebar {
+  position: sticky;
+  top: 14px;
+  max-height: calc(100vh - 28px);
+  overflow-y: auto;
+  padding: 19px;
+  background: #14283d;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.sidebar h3 {
+  font-size: 16px;
+  color: var(--gold);
+  margin-bottom: 19px;
+}
+
+.side-section {
+  margin-bottom: 19px;
+  padding-bottom: 19px;
+  border-bottom: 1px solid var(--border);
+}
+
+.side-section:last-child {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.side-title {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.timer {
+  text-align: center;
+  font-size: 43px;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.remaining {
+  text-align: center;
+  color: #c3d8eb;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.timer-controls button {
+  flex: 1;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 10px 4px;
+}
+
+.green { background: #238263; }
+.gray { background: #49637d; }
+.red { background: #995061; }
+
+.stage-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 7px;
+  padding: 11px;
+  margin-bottom: 8px;
+  background: #1e3a53;
+  border: 1px solid #456782;
+  border-radius: 9px;
+  color: white;
+  text-align: left;
+  font-size: 12px;
+}
+
+.stage-button.active {
+  background: #356eae;
+  border-color: #91bdff;
+}
+
+.stage-button small {
+  white-space: nowrap;
+  color: #dce9f9;
+}
+
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px;
+  background: #203d57;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.score-row strong {
+  color: var(--gold);
+}
+
+.reset-scores {
+  width: 100%;
+  padding: 11px;
+  margin-top: 8px;
+  background: transparent;
+  border: 1px solid #a46d77;
+  border-radius: 9px;
+  color: #ffd3da;
+}
+
+.navigation {
+  display: grid;
+  gap: 9px;
+}
+
+.navigation button {
+  width: 100%;
+  padding: 13px;
+  border: 0;
+  border-radius: 9px;
+  font-weight: 800;
+}
+
+.previous {
+  background: #365470;
+  color: white;
+}
+
+.next {
+  background: var(--gold);
+  color: #1b2c43;
+}
+
+/* АЯҚТАУ */
+
+.footer {
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #a4bed6;
+  font-size: 12px;
+}
+
+.footer strong {
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+
+/* ТЕЛЕФОН ЖӘНЕ ПЛАНШЕТ */
+
+@media (max-width: 1120px) {
+  .teams {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 850px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+
+  .sidebar {
+    position: static;
+    max-height: none;
+  }
+
+  .topbar {
+    padding: 15px;
+  }
+
+  .topic-label {
+    display: none;
+  }
+
+  .brand h1 {
+    font-size: 15px;
+  }
+
+  .hero,
+  .card {
+    padding: 21px;
+  }
+
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .notebook {
+    padding: 21px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+
+  .notebook p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h2 {
+    font-size: 25px;
+  }
+}
